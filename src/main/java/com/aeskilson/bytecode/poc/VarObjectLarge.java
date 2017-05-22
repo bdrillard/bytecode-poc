@@ -20013,6 +20013,16 @@ public class VarObjectLarge {
   }
 
   public void apply() {
+    apply1();
+    apply2();
+
+    n.apply1();
+    n.apply2();
+    n.apply3();
+    n.apply4();
+  }
+
+  public void apply1() {
     iVar1 = 1;
     iVar2 = 1;
     iVar3 = 1;
@@ -25013,7 +25023,9 @@ public class VarObjectLarge {
     iVar4998 = 1;
     iVar4999 = 1;
     iVar5000 = 1;
+  }
 
+  public void apply2() {
     sVar1 = "foo";
     sVar2 = "foo";
     sVar3 = "foo";
@@ -30014,11 +30026,6 @@ public class VarObjectLarge {
     sVar4998 = "foo";
     sVar4999 = "foo";
     sVar5000 = "foo";
-
-    n.apply1();
-    n.apply2();
-    n.apply3();
-    n.apply4();
   }
 
   public void run() {

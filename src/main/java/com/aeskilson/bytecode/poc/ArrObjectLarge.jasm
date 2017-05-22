@@ -25083,12 +25083,7 @@ public class com.aeskilson.bytecode.poc.ArrObjectLarge {
     44861: sipush        4999
     44864: iconst_1
     44865: iastore
-    44866: aload_0
-    44867: getfield      #2                 // Field iVars:[I
-    44870: sipush        5000
-    44873: iconst_1
-    44874: iastore
-    44875: return
+    44866: return
 
   public void apply2();
     Code:
@@ -50092,12 +50087,7 @@ public class com.aeskilson.bytecode.poc.ArrObjectLarge {
     49860: sipush        4999
     49863: ldc           #15                // String foo
     49865: aastore
-    49866: aload_0
-    49867: getfield      #4                 // Field sVars:[Ljava/lang/String;
-    49870: sipush        5000
-    49873: ldc           #15                // String foo
-    49875: aastore
-    49876: return
+    49866: return
 
   public void run();
     Code:

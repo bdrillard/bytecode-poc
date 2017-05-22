@@ -6,7 +6,7 @@ In this project, we try to compare usage of class member variables to compacted 
 
 ## Results
 
-Compare the `.jasm` bytecode generated with `javap` for the `VarObject` and `ArrObject` classes. We note that the array access operations during setting and access each take about 2-3 more assembly instructions than setting and accessing inlined variables. However, directly comparing the `VarObjectLarge` and `ArrObjectLarge` bytecode files shows that the added declaration and initialization of inlined variables goes on to dominate bytecode generation, whereas the arrays are declared and initialized very concisely.
+Compare the `.jasm` bytecode generated with `javap` for the `VarObject` and `ArrObject` classes. We note that the array access operations during setting and access each take about 2-3 more assembly instructions than setting and accessing inlined variables. However, directly comparing the `VarObjectLarge` and `ArrObjectLarge` bytecode files shows that the added declaration and initialization of inlined variables goes on to dominate bytecode generation, whereas the arrays are declared and initialized very concisely. The final length of the `VarObjectLarge` bytecode file is 80,052 lines, and the `ArrObjectLarge` bytecode file is 50,121 lines. The `init` method for the `ArrObjectLarge` class is represented in some 30 instructions, while the `init` method for the `VarObjectLarge` class requires some 30,000 instructions.
 
 Benchmarking the code in milliseconds also seems to show the array based variable storage approach executes 2 orders of magnitude more quickly than the inlined-variable object. An example execution of the main method:
 
@@ -14,3 +14,5 @@ Benchmarking the code in milliseconds also seems to show the array based variabl
 Variable execution time: 2587
 Array execution time: 56
 ```
+
+We may conclude that differences in overhead between the two approaches is negligible, or perhaps even that for classes of a many variables, compaction in arrays is more efficient than inlining all variables.
