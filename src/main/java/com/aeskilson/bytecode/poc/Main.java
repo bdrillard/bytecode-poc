@@ -21,7 +21,7 @@ public class Main {
     al.run();
     final long alEndTime = System.currentTimeMillis();
 
-    System.out.println("Variable execution time: " + (vlEndTime - vlStartTime));
-    System.out.println("Array execution time: " + (alEndTime - alStartTime));
+    System.out.println("Variable execution time (ms): " + (vlEndTime - vlStartTime));
+    System.out.println("Array execution time (ms): " + (alEndTime - alStartTime));
   }
 }
